@@ -3,7 +3,7 @@
 import "./App.css";
 import Navbar from "./components/Navbar";
 import TextForm from './components/TextForm';
-import About from "./components/About";
+// import About from "./components/About";
 import { useState } from "react";
 
 function App() {
