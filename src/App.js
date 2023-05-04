@@ -16,7 +16,7 @@ function App() {
   }
   return (
     <div style={{ backgroundColor: mode === 'dark' ? '#18181b' : 'white' }}>
-      <Navbar title="TextUtil App" aboutText="About" mode={mode} toggleMode={toggleMode}/>
+      <Navbar title="TextUtil App" aboutText="" mode={mode} toggleMode={toggleMode}/>
       <div className="container my-3">
       <TextForm mode={mode} title="Enter Your Text Here:"/>
       {/* <About/> */}
