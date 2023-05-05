@@ -2,11 +2,23 @@
 import React from "react";
 import PropTypes from "prop-types";
 export default function Navbar(props) {
+  const style = {};
+  if (props.mode === 'light') {
+    style.backgroundColor = '#e1f6ff';
+  }
+  
+  const navmodify=()=>{
+    if (props.mode==='light')
+      return ``;
+    else
+      return `bg-${props.mode} navbar-${props.mode}`;
+  }
+  // <nav className={`navbar navbar-expand-lg bg-${props.mode} navbar-${props.mode}`}>
   return (
-    <nav
-      className={`navbar navbar-expand-lg bg-${props.mode} navbar-${props.mode}`}
+    <nav 
+      className={`navbar navbar-expand-lg ${navmodify()}`} style={style}
     >
-      <div className="container-fluid">
+      <div className="container-fluid" >
         <a className="navbar-brand" href="/">
           {props.title}
         </a>
