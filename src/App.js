@@ -4,8 +4,9 @@ import "./App.css";
 import Alert from "./components/Alert";
 import Navbar from "./components/Navbar";
 import TextForm from './components/TextForm';
-// import About from "./components/About";
+import About from "./components/About";
 import { useState } from "react";
+import { BrowserRouter as Router, Routes,Route } from "react-router-dom";
 
 function App() {
   const [mode, setMode] = useState("light");
@@ -33,17 +34,18 @@ function App() {
       },1000);
   }
   return (
-    
+    <Router>
     <div style={{ backgroundColor: mode === 'dark' ? '#18181b' : 'white' }}>
       <Navbar title="TextUtil App" aboutText="" mode={mode} toggleMode={toggleMode}/>
       <Alert alert={alert}></Alert>
       <div className="container my-3">
-      <TextForm showAlert={showAlert} mode={mode} title="Enter Your Text Here:"/>
-      {/* <About/> */}
+        <Routes>
+          <Route exact path='/about' element ={<About/>}/>
+          <Route path='/' element={ <TextForm showAlert={showAlert} mode={mode} title="Enter Your Text Here:"/>}/>
+        </Routes>
       </div>
-     
-      
     </div>
+    </Router>
   );
 }
 export default App;
